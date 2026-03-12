@@ -7,6 +7,7 @@ function NavBar() {
     return (
         <div
             className="
+            relative
         flex items-center justify-between sm:gap-20
         p-6 sm:pt-16 sm:pb-16 sm:px-60
         "
