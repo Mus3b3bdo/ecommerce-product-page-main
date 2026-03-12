@@ -35,6 +35,8 @@ function DesktopNav() {
                         last:pe-0
                         px-5
                         hover:[anchor-name:--active-link]
+                        hover:font-bold
+                        hover:text-neutral-700
                         "
                         key={item}>
                             <a 
