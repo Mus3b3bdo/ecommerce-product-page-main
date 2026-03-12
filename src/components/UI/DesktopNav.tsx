@@ -2,39 +2,47 @@ import { menu } from "../../data/data"
 
 function DesktopNav() {
     return (
-        <div
+        <nav
             className="
         hidden sm:block
         flex-1
+        relative
+        [anchor-name:--active-link]
+        after:content-['']
+            after:absolute
+            after:h-1
+            after:bg-orange-500
+            after:left-[anchor(left)]
+            after:right-[anchor(right)]
+            after:bottom-[anchor(bottom)]
+            after:translate-y-20
+            after:[position-anchor:--active-link]
+            after:transotion-500
         "
         >
             <ul
                 className="
-            flex gap-10
+            flex
+            w-fit
             "
             >
                 {menu.map((item) => {
                     return (<li
                         className="
                         text-neutral-400
-                        relative
                         cursor-pointer
-                        after:content-['']
-                        after:absolute
-                        after:inset-0
-                        after:pb-25
-                        after:w-full after:h-10
-                        after:transition-border
-                        after:duration-300
-                        after:border-orange-500
-                        hover:after:border-b-[5px]
-                        hover:font-bold
-                        hover:text-neutral-700
+                        first:ps-0
+                        last:pe-0
+                        px-5
+                        hover:[anchor-name:--active-link]
                         "
-                        key={item}>{item}</li>)
+                        key={item}>
+                            <a 
+                        href="#"
+                        >{item}</a></li>)
                 })}
             </ul>
-        </div>
+        </nav>
     )
 }
 
